@@ -8,7 +8,7 @@ const routes = [
   { path: '/limpieza-de-moquetas-empresas/', output: 'limpieza-de-moquetas-empresas/index.html' },
   { path: '/mantenimiento-de-limpieza/', output: 'mantenimiento-de-limpieza/index.html' },
   { path: '/limpieza-de-locales-comerciales/', output: 'limpieza-de-locales-comerciales/index.html' },
-  { path: '/404', output: '404/index.html' },
+  { path: '/404', output: '404.html' },
 ];
 
 const template = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');

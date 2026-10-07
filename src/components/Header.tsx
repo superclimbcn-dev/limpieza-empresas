@@ -15,8 +15,13 @@ export function Header() {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsOpen(false);
+    };
+    if (isOpen) document.addEventListener('keydown', closeOnEscape);
     return () => {
       document.body.style.overflow = '';
+      document.removeEventListener('keydown', closeOnEscape);
     };
   }, [isOpen]);
 
@@ -24,7 +29,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-brand-950/90 text-white backdrop-blur-xl">
       <div className="mx-auto flex h-[5.5rem] max-w-7xl items-center justify-between px-4 py-3 sm:h-24 sm:px-6 lg:px-8">
         <Link to="/" aria-label="Superclim Empresas — inicio" className="flex items-center gap-3">
-          <img src="/images/logo-superclim.png" alt="Superclim" className="h-16 w-auto sm:h-[4.5rem]" />
+          <img src="/images/logo-superclim.png" alt="Superclim" width="249" height="282" className="h-16 w-auto sm:h-[4.5rem]" />
           <span className="hidden text-sm font-semibold tracking-wide text-emerald-50 sm:block">Empresas</span>
         </Link>
 
@@ -52,7 +57,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setIsOpen((value) => !value)}
-            className="rounded-lg p-2 text-white hover:bg-white/10 lg:hidden"
+            className="grid min-h-11 min-w-11 place-items-center rounded-lg p-2 text-white hover:bg-white/10 lg:hidden"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}

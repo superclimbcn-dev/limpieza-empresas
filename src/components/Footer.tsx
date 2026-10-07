@@ -43,7 +43,7 @@ export function Footer() {
           </span>
         </address>
       </div>
-      <div className="border-t border-white/10 px-4 py-6 text-center text-xs text-slate-500">
+      <div className="border-t border-white/10 px-4 pb-24 pt-6 text-center text-xs text-slate-500 sm:py-6">
         © {new Date().getFullYear()} Superclim Servicios. Todos los derechos reservados.
       </div>
     </footer>
