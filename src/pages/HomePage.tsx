@@ -14,6 +14,7 @@ import {
   Truck,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { SEOMeta } from '@/components/SEOMeta';
 import { SchemaOrg } from '@/components/SchemaOrg';
 import { businessConfig, whatsappUrl } from '@/config/business';
@@ -23,10 +24,11 @@ interface CardItem {
   title: string;
   description: string;
   icon: LucideIcon;
+  href?: string;
 }
 
 const services: CardItem[] = [
-  { title: 'Oficinas', description: 'Espacios de trabajo limpios, cuidados y preparados para cada jornada.', icon: Building2 },
+  { title: 'Oficinas', description: 'Espacios de trabajo limpios, cuidados y preparados para cada jornada.', icon: Building2, href: '/limpieza-de-oficinas/' },
   { title: 'Naves industriales', description: 'Limpieza adaptada a superficies amplias y entornos de actividad industrial.', icon: Factory },
   { title: 'Locales comerciales', description: 'Una imagen impecable para recibir a clientes y equipos.', icon: ShoppingBag },
   { title: 'Centros logísticos', description: 'Soluciones organizadas para instalaciones con movimiento constante.', icon: Truck },
@@ -77,7 +79,7 @@ export function HomePage() {
           <div>
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-400/10 px-4 py-2 text-sm font-semibold text-brand-400"><Building2 className="h-4 w-4" aria-hidden="true" /> Superclim Empresas</p>
             <h1 className="max-w-4xl text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">Empresa de limpieza profesional en <span className="text-brand-400">Sabadell, Barcelona y Vallès</span></h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Soluciones de limpieza y mantenimiento adaptadas a oficinas, naves, comercios y centros de trabajo.</p>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Soluciones B2B de limpieza profesional y mantenimiento adaptadas al ritmo de oficinas, naves, comercios y centros de trabajo en Sabadell, Barcelona y Vallès.</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a href={budgetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-600 to-teal-500 px-6 py-3.5 font-bold shadow-soft transition hover:brightness-110">Solicitar presupuesto <ArrowRight className="h-5 w-5" aria-hidden="true" /></a>
               <a href={budgetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-bold transition hover:bg-white/10"><MessageCircle className="h-5 w-5 text-brand-400" aria-hidden="true" /> WhatsApp</a>
@@ -97,7 +99,11 @@ export function HomePage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading eyebrow="Servicios principales" title="Limpieza profesional para cada espacio" description="Un servicio claro, flexible y dimensionado según las necesidades de tu empresa." />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => <article key={service.title} className="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-brand-400 hover:shadow-soft"><div className="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white"><service.icon className="h-6 w-6" aria-hidden="true" /></div><h3 className="mt-5 text-xl font-bold text-slate-900">{service.title}</h3><p className="mt-3 leading-7 text-slate-600">{service.description}</p></article>)}
+            {services.map((service) => {
+              const content = <><div className="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-700 transition group-hover:bg-brand-600 group-hover:text-white"><service.icon className="h-6 w-6" aria-hidden="true" /></div><h3 className="mt-5 text-xl font-extrabold text-slate-900">{service.title}</h3><p className="mt-3 leading-7 text-slate-600">{service.description}</p>{service.href && <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-700">Ver servicio <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" /></span>}</>;
+              const classes = 'group block rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-400 hover:shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-600';
+              return service.href ? <Link key={service.title} to={service.href} className={classes}>{content}</Link> : <article key={service.title} className={classes}>{content}</article>;
+            })}
           </div>
         </div>
       </section>
@@ -112,9 +118,9 @@ export function HomePage() {
       </section>
 
       <section id="sectores" className="scroll-mt-20 px-4 py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
-          <div><p className="text-sm font-extrabold uppercase tracking-[0.2em] text-brand-600">Limpieza según tu actividad</p><h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">Cada empresa funciona de forma diferente</h2><p className="mt-5 max-w-xl text-lg leading-8 text-slate-600">Adaptamos tareas, frecuencia y horario al uso real de tus instalaciones para ofrecer una solución proporcionada y práctica.</p></div>
-          <div className="grid grid-cols-2 gap-3">{sectors.map((sector) => <div key={sector} className="flex min-h-24 items-center gap-3 rounded-2xl border border-slate-200 p-5 font-bold text-slate-800"><CheckCircle2 className="h-5 w-5 shrink-0 text-brand-600" aria-hidden="true" />{sector}</div>)}</div>
+        <div className="mx-auto grid max-w-7xl items-center gap-14 rounded-3xl bg-gradient-to-br from-brand-50 to-white p-7 ring-1 ring-brand-100 sm:p-12 lg:grid-cols-2">
+          <div><p className="text-sm font-extrabold uppercase tracking-[0.2em] text-brand-600">Limpieza según tu actividad</p><h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">Cada empresa funciona de forma diferente</h2><p className="mt-5 max-w-xl text-lg leading-8 text-slate-600">Adaptamos tareas, frecuencia y horario al uso real de tus instalaciones para ofrecer una solución proporcionada y práctica.</p><div className="mt-7 h-1 w-20 rounded-full bg-gradient-to-r from-brand-600 to-teal-400" /></div>
+          <div className="grid grid-cols-1 gap-3 min-[390px]:grid-cols-2">{sectors.map((sector) => <div key={sector} className="flex min-h-20 items-center gap-3 rounded-2xl border border-brand-100 bg-white p-4 font-bold text-slate-800 shadow-sm transition hover:border-brand-300 hover:shadow-md sm:p-5"><CheckCircle2 className="h-5 w-5 shrink-0 text-brand-600" aria-hidden="true" />{sector}</div>)}</div>
         </div>
       </section>
 
@@ -135,7 +141,7 @@ export function HomePage() {
       <section className="bg-slate-50 px-4 py-24 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 rounded-3xl bg-white p-8 shadow-sm sm:p-12 lg:grid-cols-[1fr_.9fr]">
           <div><p className="text-sm font-extrabold uppercase tracking-[0.2em] text-brand-600">La misma Superclim</p><h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">¿Buscas un servicio para tu hogar?</h2><p className="mt-5 max-w-xl text-lg leading-8 text-slate-600">Superclim también sigue cuidando los textiles de hogares particulares. En nuestra web principal encontrarás los servicios especializados de siempre.</p></div>
-          <div className="divide-y divide-slate-100 rounded-2xl border border-slate-200 px-6">{privateServices.map((service) => <a key={service.label} href={service.href} className="flex items-center justify-between py-4 font-bold text-slate-800 transition hover:text-brand-600">{service.label}<ArrowRight className="h-4 w-4" aria-hidden="true" /></a>)}</div>
+          <div className="divide-y divide-slate-100 rounded-2xl border border-slate-200 px-6">{privateServices.map((service) => <a key={service.label} href={service.href} className="group flex min-h-14 cursor-pointer items-center justify-between gap-4 py-4 font-bold text-slate-800 transition hover:text-brand-600 focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600">{service.label}<ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" /></a>)}</div>
         </div>
       </section>
 

@@ -13,6 +13,12 @@ export const homeSEO: SEOConfig = {
   path: '/',
 };
 
+export const officeCleaningSEO: SEOConfig = {
+  title: 'Limpieza de Oficinas en Barcelona y Sabadell | Superclim Empresas',
+  description: 'Limpieza profesional de oficinas en Sabadell, Barcelona y Vallès. Servicio puntual o mantenimiento periódico adaptado a tu empresa. Solicita presupuesto.',
+  path: '/limpieza-de-oficinas/',
+};
+
 export const notFoundSEO: SEOConfig = {
   title: 'Página no encontrada | Superclim Empresas',
   description: 'La página solicitada no está disponible.',

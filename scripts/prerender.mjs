@@ -1,15 +1,25 @@
-import { copyFile, mkdir } from 'node:fs/promises';
+import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { render } from '../dist-server/entry-server.js';
 
-// Minimal prerender entry point. Additional public routes can be added here
-// when their final copy is approved.
-const routes = ['404'];
+const routes = [
+  { path: '/', output: 'index.html' },
+  { path: '/limpieza-de-oficinas/', output: 'limpieza-de-oficinas/index.html' },
+  { path: '/404', output: '404/index.html' },
+];
+
+const template = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
 
 await Promise.all(
-  routes.map(async (route) => {
-    const directory = new URL(`../dist/${route}/`, import.meta.url);
-    await mkdir(directory, { recursive: true });
-    await copyFile(new URL('../dist/index.html', import.meta.url), new URL('index.html', directory));
+  routes.map(async ({ path, output }) => {
+    const { html, head } = render(path);
+    const rendered = template
+      .replace('</head>', `${head}</head>`)
+      .replace('<div id="root"></div>', `<div id="root">${html}</div>`);
+    const destination = new URL(`../dist/${output}`, import.meta.url);
+    await mkdir(new URL('.', destination), { recursive: true });
+    await writeFile(destination, rendered);
   }),
 );
 
-console.log(`Prerendered ${routes.length} route shell(s).`);
+await rm(new URL('../dist-server', import.meta.url), { recursive: true, force: true });
+console.log(`Prerendered ${routes.length} route(s).`);

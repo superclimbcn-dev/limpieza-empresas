@@ -5,20 +5,20 @@ import { businessConfig } from '@/config/business';
 export function Footer() {
   return (
     <footer id="contacto" className="bg-slate-950 text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8 lg:py-20">
         <div>
           <Link to="/" className="text-3xl font-extrabold tracking-tight">
             Super<span className="text-brand-400">clim</span>
           </Link>
-          <p className="mt-4 max-w-md text-sm leading-6 text-slate-400">Soluciones profesionales de limpieza para empresas.</p>
+          <p className="mt-5 max-w-xs text-sm leading-7 text-slate-400">Soluciones profesionales de limpieza para empresas en Sabadell, Barcelona y Vallès Occidental.</p>
         </div>
         <div>
           <h2 className="font-bold">Empresas</h2>
           <nav aria-label="Enlaces de empresa" className="mt-4 flex flex-col gap-3 text-sm text-slate-400">
-            <a href="#servicios" className="transition hover:text-brand-400">Servicios</a>
-            <a href="#sectores" className="transition hover:text-brand-400">Sectores</a>
-            <a href="#textil" className="transition hover:text-brand-400">Limpieza textil</a>
-            <a href="#cobertura" className="transition hover:text-brand-400">Cobertura</a>
+            <a href="/#servicios" className="transition hover:text-brand-400">Servicios</a>
+            <Link to="/limpieza-de-oficinas/" className="transition hover:text-brand-400">Limpieza de oficinas</Link>
+            <a href="/#textil" className="transition hover:text-brand-400">Limpieza textil</a>
+            <a href="/#cobertura" className="transition hover:text-brand-400">Cobertura</a>
           </nav>
         </div>
         <div>
