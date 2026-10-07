@@ -4,6 +4,8 @@ import { render } from '../dist-server/entry-server.js';
 const routes = [
   { path: '/', output: 'index.html' },
   { path: '/limpieza-de-oficinas/', output: 'limpieza-de-oficinas/index.html' },
+  { path: '/limpieza-de-naves-industriales/', output: 'limpieza-de-naves-industriales/index.html' },
+  { path: '/limpieza-de-moquetas-empresas/', output: 'limpieza-de-moquetas-empresas/index.html' },
   { path: '/404', output: '404/index.html' },
 ];
 

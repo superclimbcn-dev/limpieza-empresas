@@ -9,6 +9,11 @@ export const businessConfig = {
   siteUrl: 'https://empresas.superclim.es',
   urls: {
     mainSite: 'https://superclim.es',
+    businessServices: {
+      offices: '/limpieza-de-oficinas/',
+      industrial: '/limpieza-de-naves-industriales/',
+      carpets: '/limpieza-de-moquetas-empresas/',
+    },
     privateServices: {
       sofas: 'https://superclim.es/limpieza-de-sofas/',
       carpets: 'https://superclim.es/limpieza-de-alfombras/',

@@ -15,9 +15,9 @@ export function Footer() {
         <div>
           <h2 className="font-bold">Empresas</h2>
           <nav aria-label="Enlaces de empresa" className="mt-4 flex flex-col gap-3 text-sm text-slate-400">
-            <a href="/#servicios" className="transition hover:text-brand-400">Servicios</a>
             <Link to="/limpieza-de-oficinas/" className="transition hover:text-brand-400">Limpieza de oficinas</Link>
-            <a href="/#textil" className="transition hover:text-brand-400">Limpieza textil</a>
+            <Link to="/limpieza-de-naves-industriales/" className="transition hover:text-brand-400">Naves industriales</Link>
+            <Link to="/limpieza-de-moquetas-empresas/" className="transition hover:text-brand-400">Moquetas para empresas</Link>
             <a href="/#cobertura" className="transition hover:text-brand-400">Cobertura</a>
           </nav>
         </div>

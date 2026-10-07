@@ -29,10 +29,10 @@ interface CardItem {
 
 const services: CardItem[] = [
   { title: 'Oficinas', description: 'Espacios de trabajo limpios, cuidados y preparados para cada jornada.', icon: Building2, href: '/limpieza-de-oficinas/' },
-  { title: 'Naves industriales', description: 'Limpieza adaptada a superficies amplias y entornos de actividad industrial.', icon: Factory },
+  { title: 'Naves industriales', description: 'Limpieza adaptada a superficies amplias y entornos de actividad industrial.', icon: Factory, href: businessConfig.urls.businessServices.industrial },
   { title: 'Locales comerciales', description: 'Una imagen impecable para recibir a clientes y equipos.', icon: ShoppingBag },
   { title: 'Centros logísticos', description: 'Soluciones organizadas para instalaciones con movimiento constante.', icon: Truck },
-  { title: 'Moquetas y tapicerías', description: 'Limpieza especializada de textiles de uso profesional.', icon: Armchair },
+  { title: 'Moquetas y tapicerías', description: 'Limpieza especializada de textiles de uso profesional.', icon: Armchair, href: businessConfig.urls.businessServices.carpets },
   { title: 'Mantenimiento periódico', description: 'Planes recurrentes ajustados al ritmo de cada empresa.', icon: CalendarClock },
 ];
 

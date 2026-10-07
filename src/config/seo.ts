@@ -19,6 +19,18 @@ export const officeCleaningSEO: SEOConfig = {
   path: '/limpieza-de-oficinas/',
 };
 
+export const industrialCleaningSEO: SEOConfig = {
+  title: 'Limpieza de Naves Industriales en Barcelona | Superclim Empresas',
+  description: 'Limpieza profesional de naves, almacenes y centros logísticos en Sabadell, Barcelona y Vallès. Servicio puntual o periódico adaptado a tu instalación.',
+  path: '/limpieza-de-naves-industriales/',
+};
+
+export const businessCarpetCleaningSEO: SEOConfig = {
+  title: 'Limpieza de Moquetas para Empresas en Barcelona | Superclim',
+  description: 'Limpieza profesional de moquetas, sillas y tapicerías para oficinas y empresas en Sabadell, Barcelona y Vallès. Solicita un presupuesto personalizado.',
+  path: '/limpieza-de-moquetas-empresas/',
+};
+
 export const notFoundSEO: SEOConfig = {
   title: 'Página no encontrada | Superclim Empresas',
   description: 'La página solicitada no está disponible.',
