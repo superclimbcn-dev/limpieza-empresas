@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://empresas.superclim.es/sitemap.xml

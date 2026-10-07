@@ -1,0 +1,13 @@
+export const businessConfig = {
+  name: 'Superclim',
+  projectName: 'Superclim Empresas',
+  phone: '+34624529442',
+  phoneDisplay: '+34 624 529 442',
+  whatsappNumber: '34624529442',
+  email: 'superclimbcn@gmail.com',
+  address: 'Carrer de Alfons Sala 57, 08203 Sabadell, Barcelona',
+  siteUrl: 'https://empresas.superclim.es',
+} as const;
+
+export const whatsappUrl = (message: string) =>
+  `https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
