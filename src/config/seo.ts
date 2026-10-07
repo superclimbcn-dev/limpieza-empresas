@@ -31,6 +31,18 @@ export const businessCarpetCleaningSEO: SEOConfig = {
   path: '/limpieza-de-moquetas-empresas/',
 };
 
+export const cleaningMaintenanceSEO: SEOConfig = {
+  title: 'Mantenimiento de Limpieza para Empresas | Superclim Empresas',
+  description: 'Mantenimiento de limpieza para oficinas, naves y locales en Sabadell, Barcelona y Vallès. Servicio periódico con frecuencias y horarios adaptados.',
+  path: '/mantenimiento-de-limpieza/',
+};
+
+export const retailCleaningSEO: SEOConfig = {
+  title: 'Limpieza de Locales Comerciales en Barcelona | Superclim Empresas',
+  description: 'Limpieza profesional de tiendas y locales comerciales en Sabadell, Barcelona y Vallès. Servicio puntual o mantenimiento adaptado a cada negocio.',
+  path: '/limpieza-de-locales-comerciales/',
+};
+
 export const notFoundSEO: SEOConfig = {
   title: 'Página no encontrada | Superclim Empresas',
   description: 'La página solicitada no está disponible.',

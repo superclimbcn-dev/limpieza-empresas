@@ -6,6 +6,8 @@ const routes = [
   { path: '/limpieza-de-oficinas/', output: 'limpieza-de-oficinas/index.html' },
   { path: '/limpieza-de-naves-industriales/', output: 'limpieza-de-naves-industriales/index.html' },
   { path: '/limpieza-de-moquetas-empresas/', output: 'limpieza-de-moquetas-empresas/index.html' },
+  { path: '/mantenimiento-de-limpieza/', output: 'mantenimiento-de-limpieza/index.html' },
+  { path: '/limpieza-de-locales-comerciales/', output: 'limpieza-de-locales-comerciales/index.html' },
   { path: '/404', output: '404/index.html' },
 ];
 

@@ -13,6 +13,8 @@ export const businessConfig = {
       offices: '/limpieza-de-oficinas/',
       industrial: '/limpieza-de-naves-industriales/',
       carpets: '/limpieza-de-moquetas-empresas/',
+      maintenance: '/mantenimiento-de-limpieza/',
+      retail: '/limpieza-de-locales-comerciales/',
     },
     privateServices: {
       sofas: 'https://superclim.es/limpieza-de-sofas/',

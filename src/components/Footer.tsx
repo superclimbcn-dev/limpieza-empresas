@@ -17,8 +17,9 @@ export function Footer() {
           <nav aria-label="Enlaces de empresa" className="mt-4 flex flex-col gap-3 text-sm text-slate-400">
             <Link to="/limpieza-de-oficinas/" className="transition hover:text-brand-400">Limpieza de oficinas</Link>
             <Link to="/limpieza-de-naves-industriales/" className="transition hover:text-brand-400">Naves industriales</Link>
+            <Link to="/limpieza-de-locales-comerciales/" className="transition hover:text-brand-400">Locales comerciales</Link>
             <Link to="/limpieza-de-moquetas-empresas/" className="transition hover:text-brand-400">Moquetas para empresas</Link>
-            <a href="/#cobertura" className="transition hover:text-brand-400">Cobertura</a>
+            <Link to="/mantenimiento-de-limpieza/" className="transition hover:text-brand-400">Mantenimiento</Link>
           </nav>
         </div>
         <div>
