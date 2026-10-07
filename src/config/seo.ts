@@ -8,8 +8,8 @@ export interface SEOConfig {
 }
 
 export const homeSEO: SEOConfig = {
-  title: 'Superclim Empresas | Limpieza profesional',
-  description: 'Limpieza profesional para empresas.',
+  title: 'Empresa de limpieza profesional | Superclim Empresas',
+  description: 'Servicios de limpieza profesional para oficinas, naves, comercios y centros de trabajo en Sabadell, Barcelona y Vallès Occidental.',
   path: '/',
 };
 

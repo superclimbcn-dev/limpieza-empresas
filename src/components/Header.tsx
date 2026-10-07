@@ -5,8 +5,9 @@ import { businessConfig, whatsappUrl } from '@/config/business';
 
 const links = [
   { label: 'Inicio', href: '#inicio' },
-  { label: 'Empresas', href: '#empresas' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'Sectores', href: '#sectores' },
+  { label: 'Cobertura', href: '#cobertura' },
 ];
 
 export function Header() {
@@ -46,7 +47,7 @@ export function Header() {
             rel="noreferrer"
             className="hidden rounded-full bg-gradient-to-r from-brand-600 to-teal-500 px-5 py-2.5 text-sm font-bold shadow-lg shadow-emerald-950/30 transition hover:brightness-110 sm:inline-flex"
           >
-            Contactar
+            Presupuesto
           </a>
           <button
             type="button"

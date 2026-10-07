@@ -5,14 +5,32 @@ import { businessConfig } from '@/config/business';
 export function Footer() {
   return (
     <footer id="contacto" className="bg-slate-950 text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div>
           <Link to="/" className="text-3xl font-extrabold tracking-tight">
             Super<span className="text-brand-400">clim</span>
           </Link>
           <p className="mt-4 max-w-md text-sm leading-6 text-slate-400">Soluciones profesionales de limpieza para empresas.</p>
         </div>
-        <address className="space-y-3 not-italic text-sm text-slate-300 md:justify-self-end">
+        <div>
+          <h2 className="font-bold">Empresas</h2>
+          <nav aria-label="Enlaces de empresa" className="mt-4 flex flex-col gap-3 text-sm text-slate-400">
+            <a href="#servicios" className="transition hover:text-brand-400">Servicios</a>
+            <a href="#sectores" className="transition hover:text-brand-400">Sectores</a>
+            <a href="#textil" className="transition hover:text-brand-400">Limpieza textil</a>
+            <a href="#cobertura" className="transition hover:text-brand-400">Cobertura</a>
+          </nav>
+        </div>
+        <div>
+          <h2 className="font-bold">Particulares</h2>
+          <nav aria-label="Servicios para particulares" className="mt-4 flex flex-col gap-3 text-sm text-slate-400">
+            <a href={businessConfig.urls.privateServices.sofas} className="transition hover:text-brand-400">Sofás y sillones</a>
+            <a href={businessConfig.urls.privateServices.carpets} className="transition hover:text-brand-400">Alfombras particulares</a>
+            <a href={businessConfig.urls.privateServices.mattresses} className="transition hover:text-brand-400">Colchones a domicilio</a>
+          </nav>
+        </div>
+        <address className="space-y-3 not-italic text-sm text-slate-300">
+          <h2 className="font-bold text-white">Contacto</h2>
           <a href={`tel:${businessConfig.phone}`} className="flex items-center gap-3 transition hover:text-brand-400">
             <Phone className="h-5 w-5 text-brand-400" aria-hidden="true" /> {businessConfig.phoneDisplay}
           </a>
@@ -25,7 +43,7 @@ export function Footer() {
         </address>
       </div>
       <div className="border-t border-white/10 px-4 py-6 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} Superclim. Todos los derechos reservados.
+        © {new Date().getFullYear()} Superclim Servicios. Todos los derechos reservados.
       </div>
     </footer>
   );

@@ -7,6 +7,15 @@ export const businessConfig = {
   email: 'superclimbcn@gmail.com',
   address: 'Carrer de Alfons Sala 57, 08203 Sabadell, Barcelona',
   siteUrl: 'https://empresas.superclim.es',
+  urls: {
+    mainSite: 'https://superclim.es',
+    privateServices: {
+      sofas: 'https://superclim.es/limpieza-de-sofas/',
+      carpets: 'https://superclim.es/limpieza-de-alfombras/',
+      mattresses: 'https://superclim.es/mas-servicios/',
+      waterproofing: 'https://superclim.es/impermeabilizacion-de-sofas',
+    },
+  },
 } as const;
 
 export const whatsappUrl = (message: string) =>
